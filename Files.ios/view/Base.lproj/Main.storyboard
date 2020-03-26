@@ -14,7 +14,21 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3bJ-kE-OTe">
+                                <rect key="frame" x="20" y="98" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Files"/>
+                                    <segment title="Notes"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3bJ-kE-OTe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KEE-XZ-UXG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3bJ-kE-OTe" secondAttribute="trailing" constant="20" id="W9i-NK-Anu"/>
+                            <constraint firstItem="3bJ-kE-OTe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="hxB-TX-Wgo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Files &amp; Notes" id="oCa-mb-6qq">
@@ -29,17 +43,31 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--Add View Controller-->
+        <!--New-->
         <scene sceneID="LsU-Cw-jOv">
             <objects>
                 <viewController id="ycD-Pb-j0z" customClass="AddViewController" customModule="Files_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LGD-wd-2kS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tVJ-rz-5uS">
+                                <rect key="frame" x="20" y="66" width="374" height="32"/>
+                                <segments>
+                                    <segment title="File"/>
+                                    <segment title="Note"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gPt-25-GUV" firstAttribute="trailing" secondItem="tVJ-rz-5uS" secondAttribute="trailing" constant="20" id="3ya-MB-kXe"/>
+                            <constraint firstItem="tVJ-rz-5uS" firstAttribute="leading" secondItem="gPt-25-GUV" secondAttribute="leading" constant="20" id="4Zh-4l-xHG"/>
+                            <constraint firstItem="tVJ-rz-5uS" firstAttribute="top" secondItem="gPt-25-GUV" secondAttribute="top" constant="10" id="au2-hx-sVH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gPt-25-GUV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1n1-6V-MSe">
+                    <navigationItem key="navigationItem" title="New" id="1n1-6V-MSe">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="q17-fy-2cs">
                             <connections>
                                 <action selector="onCancelButtonPressed:" destination="ycD-Pb-j0z" id="wre-HG-IZb"/>
