@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		80248AE6242D1FE6000EC44C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80248AE5242D1FE6000EC44C /* AppDelegate.swift */; };
 		80248AE8242D1FE6000EC44C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80248AE7242D1FE6000EC44C /* SceneDelegate.swift */; };
-		80248AEA242D1FE6000EC44C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80248AE9242D1FE6000EC44C /* ViewController.swift */; };
+		80248AEA242D1FE6000EC44C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80248AE9242D1FE6000EC44C /* HomeViewController.swift */; };
 		80248AED242D1FE6000EC44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80248AEB242D1FE6000EC44C /* Main.storyboard */; };
 		80248AEF242D1FE7000EC44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80248AEE242D1FE7000EC44C /* Assets.xcassets */; };
 		80248AF2242D1FE7000EC44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80248AF0242D1FE7000EC44C /* LaunchScreen.storyboard */; };
+		80248AFE242D2AC2000EC44C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80248AFD242D2AC2000EC44C /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80248AE2242D1FE6000EC44C /* Files.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Files.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80248AE5242D1FE6000EC44C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80248AE7242D1FE6000EC44C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80248AE9242D1FE6000EC44C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80248AE9242D1FE6000EC44C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		80248AEC242D1FE6000EC44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80248AEE242D1FE7000EC44C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80248AF1242D1FE7000EC44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80248AF3242D1FE7000EC44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80248AFD242D2AC2000EC44C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		80248AE4242D1FE6000EC44C /* Files.ios */ = {
 			isa = PBXGroup;
 			children = (
+				80248AFC242D2103000EC44C /* model */,
+				80248AFB242D20F4000EC44C /* controller */,
+				80248AFA242D20E3000EC44C /* view */,
 				80248AE5242D1FE6000EC44C /* AppDelegate.swift */,
 				80248AE7242D1FE6000EC44C /* SceneDelegate.swift */,
-				80248AE9242D1FE6000EC44C /* ViewController.swift */,
-				80248AEB242D1FE6000EC44C /* Main.storyboard */,
 				80248AEE242D1FE7000EC44C /* Assets.xcassets */,
 				80248AF0242D1FE7000EC44C /* LaunchScreen.storyboard */,
 				80248AF3242D1FE7000EC44C /* Info.plist */,
 			);
 			path = Files.ios;
+			sourceTree = "<group>";
+		};
+		80248AFA242D20E3000EC44C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				80248AEB242D1FE6000EC44C /* Main.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		80248AFB242D20F4000EC44C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				80248AE9242D1FE6000EC44C /* HomeViewController.swift */,
+				80248AFD242D2AC2000EC44C /* AddViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		80248AFC242D2103000EC44C /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80248AEA242D1FE6000EC44C /* ViewController.swift in Sources */,
+				80248AEA242D1FE6000EC44C /* HomeViewController.swift in Sources */,
 				80248AE6242D1FE6000EC44C /* AppDelegate.swift in Sources */,
+				80248AFE242D2AC2000EC44C /* AddViewController.swift in Sources */,
 				80248AE8242D1FE6000EC44C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
