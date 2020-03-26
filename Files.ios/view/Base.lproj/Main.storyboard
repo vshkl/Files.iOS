@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Files & Notes-->
+        <!--All Files-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Files_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,6 +21,9 @@
                                     <segment title="Files"/>
                                     <segment title="Notes"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0um-1i-lai"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -31,19 +34,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Files &amp; Notes" id="oCa-mb-6qq">
+                    <navigationItem key="navigationItem" title="All Files" id="oCa-mb-6qq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VWT-Y7-vOi">
                             <connections>
                                 <segue destination="GLL-9d-d7g" kind="presentation" id="vkh-zf-oMz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="niTitle" destination="oCa-mb-6qq" id="Y3X-7L-m7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--New-->
+        <!--New File-->
         <scene sceneID="LsU-Cw-jOv">
             <objects>
                 <viewController id="ycD-Pb-j0z" customClass="AddViewController" customModule="Files_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,6 +63,9 @@
                                     <segment title="File"/>
                                     <segment title="Note"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSegmentChanged:" destination="ycD-Pb-j0z" eventType="valueChanged" id="oNf-OF-83T"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -67,7 +76,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gPt-25-GUV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New" id="1n1-6V-MSe">
+                    <navigationItem key="navigationItem" title="New File" id="1n1-6V-MSe">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="q17-fy-2cs">
                             <connections>
                                 <action selector="onCancelButtonPressed:" destination="ycD-Pb-j0z" id="wre-HG-IZb"/>
@@ -79,6 +88,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="niTitle" destination="1n1-6V-MSe" id="t78-UR-Agm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSS-Lq-klV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

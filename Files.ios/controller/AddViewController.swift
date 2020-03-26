@@ -10,10 +10,10 @@ import UIKit
 
 class AddViewController: UIViewController {
 
+    @IBOutlet weak var niTitle: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func onCancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -21,6 +21,16 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func onSaveButtonPressed(_ sender: UIBarButtonItem) {
+    
+    }
+    
+    @IBAction func onSegmentChanged(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 0) {
+            self.niTitle.title = "New File"
+        }
+        if (sender.selectedSegmentIndex == 1) {
+            self.niTitle.title = "New Note"
+        }
     }
     
     /*

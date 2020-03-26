@@ -10,9 +10,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var niTitle: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+    @IBAction func onSegmentChanged(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 0) {
+            self.niTitle.title = "All Files"
+        }
+        if (sender.selectedSegmentIndex == 1) {
+            self.niTitle.title = "All Notes"
+        }
+    }
 }
