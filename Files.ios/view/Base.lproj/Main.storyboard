@@ -117,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="105" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="43" id="Hmv-Ac-VZ1" customClass="ExpiryViewCell" customModule="Files_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpiryCell" id="Hmv-Ac-VZ1" customClass="ExpiryViewCell" customModule="Files_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hmv-Ac-VZ1" id="f2f-yg-YPN">
@@ -155,7 +155,7 @@
                                             <outlet property="lblExpiry" destination="v5k-mz-VZW" id="gN9-9U-rML"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="184" id="TKJ-Wx-bC2" customClass="DateViewCell" customModule="Files_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateCell" rowHeight="184" id="TKJ-Wx-bC2" customClass="DateViewCell" customModule="Files_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="71" width="414" height="184"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TKJ-Wx-bC2" id="dHF-Da-D5T">
@@ -175,7 +175,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gwR-DH-oZQ" customClass="FileViewCell" customModule="Files_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FileCell" id="gwR-DH-oZQ" customClass="FileViewCell" customModule="Files_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="255" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gwR-DH-oZQ" id="aYv-cM-fFA">
@@ -200,7 +200,7 @@
                                             <outlet property="lblFile" destination="KEp-JT-sew" id="Q5G-2H-9f6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jl3-JF-sar" customClass="NoteViewCell" customModule="Files_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" id="jl3-JF-sar" customClass="NoteViewCell" customModule="Files_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="298" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jl3-JF-sar" id="V0z-6b-fbh">
@@ -253,6 +253,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="niTitle" destination="1n1-6V-MSe" id="t78-UR-Agm"/>
+                        <outlet property="tvInputs" destination="brz-kj-z1f" id="i6P-db-gyC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSS-Lq-klV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
