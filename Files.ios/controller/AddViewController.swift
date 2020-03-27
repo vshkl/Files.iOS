@@ -51,7 +51,7 @@ class AddViewController: UIViewController {
 extension AddViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.isDatePickerShown ? 4 : 3
+        return self.isDatePickerShown ? 3 : 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,9 +62,9 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
             case 1:
                 return renderDateRow(tableView: tableView, indexPath: indexPath)
             case 2:
-                return renderFileRow(tableView: tableView, indexPath: indexPath)
-            case 3:
-                return renderNoteRow(tableView: tableView, indexPath: indexPath)
+                return self.segmentIndex == 0
+                    ? renderFileRow(tableView: tableView, indexPath: indexPath)
+                    : renderNoteRow(tableView: tableView, indexPath: indexPath)
             default:
                 return UITableViewCell()
             }
@@ -73,9 +73,9 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 return renderExpiryRow(tableView: tableView, indexPath: indexPath)
             case 1:
-                return renderFileRow(tableView: tableView, indexPath: indexPath)
-            case 2:
-                return renderNoteRow(tableView: tableView, indexPath: indexPath)
+                return self.segmentIndex == 0
+                    ? renderFileRow(tableView: tableView, indexPath: indexPath)
+                    : renderNoteRow(tableView: tableView, indexPath: indexPath)
             default:
                 return UITableViewCell()
             }
