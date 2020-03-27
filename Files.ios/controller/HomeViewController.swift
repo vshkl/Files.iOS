@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tvEntries.tableFooterView = UIView(frame: .zero)
         self.tvEntries.dataSource = self
     }
 
@@ -29,12 +30,10 @@ class HomeViewController: UIViewController {
         if (self.segmentIndex == 0) {
             self.niTitle.title = "All Files"
             self.tvEntries.reloadData()
-            return
-        }
-        
-        if (self.segmentIndex == 1) {
+        } else if (self.segmentIndex == 1) {
             self.niTitle.title = "All Notes"
             self.tvEntries.reloadData()
+        } else {
             return
         }
     }
