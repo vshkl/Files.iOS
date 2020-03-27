@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -112,12 +113,129 @@
                                     <action selector="onSegmentChanged:" destination="ycD-Pb-j0z" eventType="valueChanged" id="oNf-OF-83T"/>
                                 </connections>
                             </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="brz-kj-z1f">
+                                <rect key="frame" x="0.0" y="105" width="414" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="43" id="Hmv-Ac-VZ1" customClass="ExpiryViewCell" customModule="Files_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hmv-Ac-VZ1" id="f2f-yg-YPN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e2l-bc-o8d">
+                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbp-fc-zC0">
+                                                            <rect key="frame" x="0.0" y="0.0" width="47" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 28, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5k-mz-VZW">
+                                                            <rect key="frame" x="270.5" y="0.0" width="103.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="e2l-bc-o8d" firstAttribute="top" secondItem="f2f-yg-YPN" secondAttribute="topMargin" id="6IO-Y2-SEJ"/>
+                                                <constraint firstItem="e2l-bc-o8d" firstAttribute="centerY" secondItem="f2f-yg-YPN" secondAttribute="centerY" id="DNS-tz-fNT"/>
+                                                <constraint firstItem="e2l-bc-o8d" firstAttribute="centerX" secondItem="f2f-yg-YPN" secondAttribute="centerX" id="KXx-I8-AyB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e2l-bc-o8d" secondAttribute="bottom" id="ZW7-rP-Wmh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e2l-bc-o8d" secondAttribute="trailing" id="wy7-JG-nJ3"/>
+                                                <constraint firstItem="e2l-bc-o8d" firstAttribute="leading" secondItem="f2f-yg-YPN" secondAttribute="leadingMargin" id="xAq-gU-XOX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblExpiry" destination="v5k-mz-VZW" id="gN9-9U-rML"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="184" id="TKJ-Wx-bC2" customClass="DateViewCell" customModule="Files_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71" width="414" height="184"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TKJ-Wx-bC2" id="dHF-Da-D5T">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="SY1-k6-sgQ">
+                                                    <rect key="frame" x="47" y="-16" width="320" height="216"/>
+                                                    <connections>
+                                                        <action selector="onDateChanged:" destination="TKJ-Wx-bC2" eventType="editingDidEnd" id="Xjg-Fy-dNR"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SY1-k6-sgQ" firstAttribute="centerX" secondItem="dHF-Da-D5T" secondAttribute="centerX" id="4jC-F8-8It"/>
+                                                <constraint firstItem="SY1-k6-sgQ" firstAttribute="centerY" secondItem="dHF-Da-D5T" secondAttribute="centerY" id="6nP-6w-W97"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gwR-DH-oZQ" customClass="FileViewCell" customModule="Files_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="255" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gwR-DH-oZQ" id="aYv-cM-fFA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add file..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEp-JT-sew">
+                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KEp-JT-sew" firstAttribute="leading" secondItem="aYv-cM-fFA" secondAttribute="leadingMargin" id="CH4-1q-rN2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KEp-JT-sew" secondAttribute="bottom" id="GKp-W0-79I"/>
+                                                <constraint firstItem="KEp-JT-sew" firstAttribute="top" secondItem="aYv-cM-fFA" secondAttribute="topMargin" id="Uev-Ct-3bM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KEp-JT-sew" secondAttribute="trailing" id="fFI-4x-RT2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblFile" destination="KEp-JT-sew" id="Q5G-2H-9f6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jl3-JF-sar" customClass="NoteViewCell" customModule="Files_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="298" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jl3-JF-sar" id="V0z-6b-fbh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q78-oi-GuY">
+                                                    <rect key="frame" x="20" y="11" width="374" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q78-oi-GuY" firstAttribute="leading" secondItem="V0z-6b-fbh" secondAttribute="leading" constant="20" symbolic="YES" id="2zs-sE-dff"/>
+                                                <constraint firstAttribute="trailing" secondItem="q78-oi-GuY" secondAttribute="trailing" constant="20" symbolic="YES" id="3Ek-kh-788"/>
+                                                <constraint firstAttribute="bottom" secondItem="q78-oi-GuY" secondAttribute="bottom" constant="11" id="6wG-0C-Sgm"/>
+                                                <constraint firstItem="q78-oi-GuY" firstAttribute="top" secondItem="V0z-6b-fbh" secondAttribute="top" constant="11" id="fpR-fz-n2w"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tfNote" destination="q78-oi-GuY" id="Ji4-LC-g9M"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gPt-25-GUV" firstAttribute="trailing" secondItem="tVJ-rz-5uS" secondAttribute="trailing" constant="20" id="3ya-MB-kXe"/>
                             <constraint firstItem="tVJ-rz-5uS" firstAttribute="leading" secondItem="gPt-25-GUV" secondAttribute="leading" constant="20" id="4Zh-4l-xHG"/>
+                            <constraint firstItem="brz-kj-z1f" firstAttribute="top" secondItem="tVJ-rz-5uS" secondAttribute="bottom" constant="8" symbolic="YES" id="JqW-Gj-sGh"/>
                             <constraint firstItem="tVJ-rz-5uS" firstAttribute="top" secondItem="gPt-25-GUV" secondAttribute="top" constant="10" id="au2-hx-sVH"/>
+                            <constraint firstItem="gPt-25-GUV" firstAttribute="trailing" secondItem="brz-kj-z1f" secondAttribute="trailing" id="mgb-5Y-dqb"/>
+                            <constraint firstItem="gPt-25-GUV" firstAttribute="bottom" secondItem="brz-kj-z1f" secondAttribute="bottom" id="p7P-Na-AUT"/>
+                            <constraint firstItem="brz-kj-z1f" firstAttribute="leading" secondItem="gPt-25-GUV" secondAttribute="leading" id="vhA-7u-hba"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gPt-25-GUV"/>
                     </view>
