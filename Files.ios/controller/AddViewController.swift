@@ -19,8 +19,6 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tvInputs.estimatedRowHeight = 44.0
-        self.tvInputs.rowHeight = UITableView.automaticDimension
         self.tvInputs.tableFooterView = UIView(frame: .zero)
         self.tvInputs.dataSource = self
         self.tvInputs.delegate = self
@@ -101,6 +99,15 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             self.tvInputs.endUpdates()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //TODO: Refactor to something sane once I figure out how :)
+        if (self.isDatePickerShown && indexPath.row == 1) {
+            return 184.0
+        } else {
+            return UITableView.automaticDimension
         }
     }
     
