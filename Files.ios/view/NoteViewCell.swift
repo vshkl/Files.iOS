@@ -10,7 +10,7 @@ import UIKit
 
 class NoteViewCell: UITableViewCell {
     
-    @IBOutlet weak var tfNote: UITextField!
+    @IBOutlet weak var tvNote: UITextView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -92,10 +92,20 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //TODO: Refactor to something sane once I figure out how :)
-        if (self.isDatePickerShown && indexPath.row == 1) {
-            return 184.0
+        if (self.isDatePickerShown) {
+            if (indexPath.row == 1) {
+                return 184.0
+            } else if (self.segmentIndex == 1 && indexPath.row == 2) {
+                return 200.0
+            } else {
+                return UITableView.automaticDimension
+            }
         } else {
-            return UITableView.automaticDimension
+            if (self.segmentIndex == 1 && indexPath.row == 1) {
+                return 200.0
+            } else {
+                return UITableView.automaticDimension
+            }
         }
     }
     
