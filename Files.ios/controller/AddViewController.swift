@@ -86,19 +86,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         self.tvInputs.deselectRow(at: indexPath, animated: true)
         
         if (indexPath.row == 0) {
-            self.tvInputs.beginUpdates()
-
-            if (self.isDatePickerShown) {
-                self.isDatePickerShown = false
-                self.tvInputs
-                    .deleteRows(at: [IndexPath(row: indexPath.row + 1, section: indexPath.section)], with: .fade)
-            } else {
-                self.isDatePickerShown = true
-                self.tvInputs
-                    .insertRows(at: [IndexPath(row: indexPath.row + 1, section: indexPath.section)], with: .fade)
-            }
-
-            self.tvInputs.endUpdates()
+            renderDatePickerRow(tableView: tableView, indexPath: indexPath)
         }
     }
     
@@ -109,6 +97,22 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return UITableView.automaticDimension
         }
+    }
+    
+    func renderDatePickerRow(tableView: UITableView, indexPath: IndexPath) {
+        self.tvInputs.beginUpdates()
+
+        if (self.isDatePickerShown) {
+            self.isDatePickerShown = false
+            self.tvInputs
+                .deleteRows(at: [IndexPath(row: indexPath.row + 1, section: indexPath.section)], with: .fade)
+        } else {
+            self.isDatePickerShown = true
+            self.tvInputs
+                .insertRows(at: [IndexPath(row: indexPath.row + 1, section: indexPath.section)], with: .fade)
+        }
+
+        self.tvInputs.endUpdates()
     }
     
     func renderExpiryRow(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
